@@ -28,6 +28,7 @@ import { SystemPulse } from "@/components/system-pulse"
 import { SystemStatusBadge } from "@/components/system-status-badge"
 import { LiveMovement } from "@/components/live-movement"
 import { AttentionQueue } from "@/components/attention-queue"
+import { DashboardMetrics } from "@/components/dashboard-metrics"
 
 const navItems = [
   { label: "Overview", icon: Activity, active: true },
@@ -175,36 +176,7 @@ export default function Home() {
                 </Button>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-                <MetricCard
-                  icon={Users}
-                  label="Active specialists"
-                  value="3 / 4"
-                  detail="Haava, Savae, Hearken"
-                  color="text-[#6f9bb8]"
-                />
-                <MetricCard
-                  icon={Inbox}
-                  label="Awaiting acknowledgement"
-                  value="0"
-                  detail="All current exchanges receipted"
-                  color="text-[#5dab82]"
-                />
-                <MetricCard
-                  icon={Workflow}
-                  label="Active movement"
-                  value="2"
-                  detail="Library and task flow running"
-                  color="text-[#8f7cff]"
-                />
-                <MetricCard
-                  icon={Layers3}
-                  label="Indexed library chunks"
-                  value="17"
-                  detail="Haava visualization foundation"
-                  color="text-[#d9a441]"
-                />
-              </div>
+              <DashboardMetrics />
 
               <div className="mt-7 grid gap-7 xl:grid-cols-[1.3fr_0.7fr]">
                 <Card className="border-[#28313c] bg-[#12161c] text-[#edeef0] shadow-none">
