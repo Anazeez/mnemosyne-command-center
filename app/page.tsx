@@ -23,7 +23,9 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+
 import { SystemPulse } from "@/components/system-pulse"
+import { SystemStatusBadge } from "@/components/system-status-badge"
 
 const navItems = [
   { label: "Overview", icon: Activity, active: true },
@@ -129,10 +131,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center gap-3">
-              <Badge className="border border-[#5dab82]/30 bg-[#5dab82]/10 text-[#8cd5a9] hover:bg-[#5dab82]/10">
-                <span className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full bg-[#5dab82]" />
-                System alive
-              </Badge>
+              <SystemStatusBadge />
 
               <Button
                 variant="ghost"
