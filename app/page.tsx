@@ -23,6 +23,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { SystemPulse } from "@/components/system-pulse"
 
 const navItems = [
   { label: "Overview", icon: Activity, active: true },
@@ -243,23 +244,7 @@ export default function Home() {
                     />
                   </CardContent>
                 </Card>
-
-                <Card className="border-[#28313c] bg-[#12161c] text-[#edeef0] shadow-none">
-                  <CardHeader>
-                    <CardTitle className="text-lg">System Pulse</CardTitle>
-                    <p className="mt-1 text-sm text-[#9aa6b2]">
-                      Current Worker and Matrix health.
-                    </p>
-                  </CardHeader>
-
-                  <CardContent className="space-y-4">
-                    <PulseRow label="Worker" value="Alive" tone="green" />
-                    <PulseRow label="D1 database" value="Connected" tone="green" />
-                    <PulseRow label="Queue" value="Active" tone="blue" />
-                    <PulseRow label="Artifacts" value="Inline-only" tone="amber" />
-                    <PulseRow label="Library" value="17 chunks indexed" tone="blue" />
-                  </CardContent>
-                </Card>
+                <SystemPulse />
               </div>
 
               <div className="mt-7 grid gap-7 xl:grid-cols-[1.3fr_0.7fr]">
