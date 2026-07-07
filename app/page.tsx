@@ -27,6 +27,7 @@ import { Separator } from "@/components/ui/separator"
 import { SystemPulse } from "@/components/system-pulse"
 import { SystemStatusBadge } from "@/components/system-status-badge"
 import { LiveMovement } from "@/components/live-movement"
+import { AttentionQueue } from "@/components/attention-queue"
 
 const navItems = [
   { label: "Overview", icon: Activity, active: true },
@@ -215,33 +216,10 @@ export default function Home() {
                       </p>
                     </div>
 
-                    <Badge className="border border-[#d9a441]/30 bg-[#d9a441]/10 text-[#e8bd65] hover:bg-[#d9a441]/10">
-                      1 waiting
-                    </Badge>
                   </CardHeader>
 
-                  <CardContent className="space-y-3">
-                    <AttentionItem
-                      icon={Clock3}
-                      title="Upload Haava’s second book"
-                      detail="The specialized source PDF is still needed in /input."
-                      action="Open Well"
-                      tone="amber"
-                    />
-                    <AttentionItem
-                      icon={CheckCircle2}
-                      title="Haava library proof completed"
-                      detail="Source-bound retrieval and evidence-backed reasoning are working."
-                      action="View proof"
-                      tone="green"
-                    />
-                    <AttentionItem
-                      icon={FileText}
-                      title="Command Center frontend initialized"
-                      detail="Next.js, Tailwind, and shadcn/ui are ready for build."
-                      action="Continue build"
-                      tone="blue"
-                    />
+                  <CardContent>
+                    <AttentionQueue />
                   </CardContent>
                 </Card>
                 <SystemPulse />
