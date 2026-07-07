@@ -26,6 +26,7 @@ import { Separator } from "@/components/ui/separator"
 
 import { SystemPulse } from "@/components/system-pulse"
 import { SystemStatusBadge } from "@/components/system-status-badge"
+import { LiveMovement } from "@/components/live-movement"
 
 const navItems = [
   { label: "Overview", icon: Activity, active: true },
@@ -256,40 +257,7 @@ export default function Home() {
                   </CardHeader>
 
                   <CardContent>
-                    <div className="space-y-5">
-                      {movement.map((event, index) => (
-                        <div key={event.title} className="flex gap-4">
-                          <div className="flex flex-col items-center">
-                            <span
-                              className={`mt-1.5 h-2.5 w-2.5 rounded-full ${
-                                event.tone === "green"
-                                  ? "bg-[#5dab82]"
-                                  : event.tone === "blue"
-                                    ? "bg-[#6f9bb8]"
-                                    : "bg-[#66717d]"
-                              }`}
-                            />
-
-                            {index < movement.length - 1 && (
-                              <span className="mt-2 h-10 w-px bg-[#28313c]" />
-                            )}
-                          </div>
-
-                          <div>
-                            <div className="flex flex-wrap items-center gap-2">
-                              <span className="font-mono text-xs text-[#65717d]">
-                                {event.time}
-                              </span>
-                              <p className="text-sm font-medium">{event.title}</p>
-                            </div>
-
-                            <p className="mt-1 text-sm text-[#9aa6b2]">
-                              {event.detail}
-                            </p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    <LiveMovement />
                   </CardContent>
                 </Card>
 
