@@ -34,3 +34,7 @@ Provide the Command Center with a safe, read-only operational summary of Project
   "attention_count": 0
 }
 ```
+
+## Security boundary
+The Command Center calls this endpoint through a server-side route.
+No Matrix credential is sent to the browser.
